@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP8266 Color Picker and GPIO Control</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>ESP8266 Color Picker and GPIO Control</h1>
+  <div>
+    <canvas id="colorWheel" width="500" height="500"></canvas>
+    <br>
+    <div class="color-inputs">
+      <label for="rValue">R: </label>
+      <input type="number" id="rValue" value="255" min="0" max="255">
+      <label for="gValue">G: </label>
+      <input type="number" id="gValue" value="255" min="0" max="255">
+      <label for="bValue">B: </label>
+      <input type="number" id="bValue" value="255" min="0" max="255">
+      <button onclick="updateColor()">
+        <span class="button_top">Update Color</span>
+      </button>
+      <p id="invalidInputMessage" style="color:red; display:none;">Invalid input</p>
+    </div>
+    <br>
+    <button onclick="showPasswordInput()">
+      <span class="button_top">Set Color</span>
+    </button>
+    <div id="passwordInputDiv" style="display:none;">
+      <input type="password" id="passwordInput" class="input" placeholder="Enter your password!">
+      <button onclick="validatePassword()">
+        <span class="button_top">Submit</span>
+      </button>
+    </div>
+    <p id="colorValue">Selected Color: #FFFFFF</p>
+    <p id="rgbValue">RGB: (255, 255, 255)</p>
+  </div>
+  <hr>
+  <div>
+    <h2>GPIO Control</h2>
+    <div id="gpioControls">
+      <!-- GPIO controls will be inserted here by JavaScript -->
+    </div>
+  </div>
+  <hr>
+  <div>
+    <h2>Extra Buttons</h2>
+    <button onclick="sendButtonValue('B1')">
+      <span class="button_top">Button 1</span>
+    </button>
+    <button onclick="sendButtonValue('B2')">
+      <span class="button_top">Button 2</span>
+    </button>
+    <button onclick="sendButtonValue('B3')">
+      <span class="button_top">Button 3</span>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
